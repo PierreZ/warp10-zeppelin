@@ -214,16 +214,26 @@ public class Warp10Interpreter extends Interpreter
   }
 
   private String parseObjectToString(Object object) {
+    
     if ( object instanceof Number ) {
       return object.toString();
     } else if ( object instanceof String ) {
       return "'" + object.toString() + "'";
     } else if (object instanceof List) {
-      JSONArray array = new JSONArray(object);
-      return "'" + array.toString() + "'" + " JSON->";
+      JSONArray array = new JSONArray();
+
+      for (Object element : (List) object) {
+        array.put(element);
+      }
+      return "'" + array.toString() + "' JSON->";
     } else if (object instanceof Map) {
-      JSONObject map = new JSONObject(object);
-      return "'" + map.toString() + "'" + " JSON->";
+      JSONObject map = new JSONObject();
+      Map mapObj = (Map) object;
+      for (Object key : mapObj.keySet()) {
+        map.put(key.toString(), mapObj.get(key));
+      }
+      
+      return "'" + map.toString() + "' JSON->";
     }
     return "";
   }
