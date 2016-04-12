@@ -218,7 +218,7 @@ public class Warp10Interpreter extends Interpreter
     if ( object instanceof Number ) {
       return object.toString();
     } else if ( object instanceof String ) {
-      return "'" + object.toString() + "'";
+      return "<'" + "\n" + object.toString() + "\n" + "'>" +"\n";
     } else if (object instanceof List) {
       JSONArray array = new JSONArray();
 
