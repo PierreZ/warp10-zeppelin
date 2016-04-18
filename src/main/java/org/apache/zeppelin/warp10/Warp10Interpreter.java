@@ -116,9 +116,9 @@ public class Warp10Interpreter extends Interpreter
 
   //@Override
   //
-  // When the result of the Warpscript contains a Map on top of the stack
+  // When the result of the WarpScript contains a Map on top of the stack
   // then all the tuples key,value are saved in Angular variables.
-  // To ensure a Map on top of the stack the Warpscipt function EXPORT can be used
+  // To ensure a Map on top of the stack the WarpScript function EXPORT can be used
   // When using Angular to save variable NaN and Infinity are transformed in String !
   //
   public InterpreterResult interpret(String body, InterpreterContext context) {
@@ -142,7 +142,7 @@ public class Warp10Interpreter extends Interpreter
         String[] varToImport = bodyLine[0].split("\\s+"); 
 
         //
-        // In this case load all variable contained in this line and add store them in Warpscript
+        // In this case load all variable contained in this line and add store them in WarpScript
         // 
 
         for (String variable : varToImport) {
@@ -164,8 +164,9 @@ public class Warp10Interpreter extends Interpreter
     try {
 
       // 
-      // Execute the request on Warpscipt if 200 then first equals SUCCESS else ERROR, 
-      // second equals message body
+      // Execute the request on WarpScript, if 200 is receive as an answer,
+      // Then pair.result.first equals SUCCESS otherwise ERROR, 
+      // Pair.result.second equals message body or error message
       //
 
       Pair<InterpreterResult.Code, String> pairResult = this.execRequest(toSend);
