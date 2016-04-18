@@ -157,7 +157,7 @@ public class Warp10Interpreter extends Interpreter
     }
 
     //
-    // Append warpscript header with body
+    // Append WarpScript header with body
     //
 
     toSend += body;
