@@ -1,6 +1,6 @@
 ## Interpreter Warp 10
 
-This plugin can be used to interpret warpscript instruction. It will send an HTTP post to Warp10 with the current paragraph lines.
+This plugin can be used to interpret WarpScript instruction. It will send an HTTP post to Warp10 with the current paragraph lines.
 The result provided is a JSON string. 
 To get started configure the Warp10 interpreter, adding the url of the Warp10 backend as parameter.
 ```
@@ -20,7 +20,7 @@ To import element in Warp10 add a new line right after '%warpscript'.
 ```
 //import var1 var2
 ```
-All variables indicated here will then be loaded in Warpscript. 
+All variables indicated here will then be loaded in WarpScript. 
 To delete elements, in the result map add NULL as value. The key will then be deleted.
 Those elements can then be loaded in an other interpreter (example with Spark).
 
@@ -33,7 +33,7 @@ z.put("spark", "test")
 ```
 
 ## Use EXPORT
-The EXPORT function available in Warpscript assure a Map as first element in top of stack.
+The EXPORT function available in WarpScript assure a Map as first element in top of stack.
 Define here a list of variable and the last value of those variables will be saved.
 
 With the following example both key 'sample' and 'spark' will be inside a Map on top of the Warp10 stack and will be saved in resource pool.
@@ -41,7 +41,7 @@ With the following example both key 'sample' and 'spark' will be inside a Map on
 %warpscript
 // import spark
 [ 'sample' 'spark' ] EXPORT
-'Warpscript' 'sample' STORE
+'WarpScript' 'sample' STORE
 ```
 
 ## Set-up 
