@@ -5,11 +5,11 @@
   <parent>
     <groupId>org.apache.zeppelin</groupId>
     <artifactId>zeppelin</artifactId>
-    <version>0.6.0-incubating-SNAPSHOT</version>
+    <version>0.6.1</version>
   </parent>
   <groupId>org.apache.zeppelin</groupId>
   <artifactId>zeppelin-warp10</artifactId>
-  <version>0.6.0-incubating-SNAPSHOT</version>
+  <version>0.6.1</version>
   <name>zeppelin-warp10</name>
   <url>http://maven.apache.org</url>
   <properties>
@@ -41,9 +41,9 @@
     </dependency>
     
     <dependency>
-	  <groupId>org.json</groupId>
-	  <artifactId>json</artifactId>
-	  <version>20160212</version>
+    <groupId>org.json</groupId>
+    <artifactId>json</artifactId>
+    <version>20160212</version>
     </dependency>
   </dependencies>
 

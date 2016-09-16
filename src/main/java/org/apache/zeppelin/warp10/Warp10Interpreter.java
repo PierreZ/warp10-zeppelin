@@ -35,6 +35,7 @@ import org.apache.zeppelin.interpreter.Interpreter;
 import org.apache.zeppelin.interpreter.InterpreterContext;
 import org.apache.zeppelin.interpreter.InterpreterPropertyBuilder;
 import org.apache.zeppelin.interpreter.InterpreterResult;
+import org.apache.zeppelin.interpreter.thrift.InterpreterCompletion;
 import org.apache.zeppelin.resource.Resource;
 import org.apache.zeppelin.resource.ResourcePool;
 import org.json.JSONArray;
@@ -97,7 +98,7 @@ public class Warp10Interpreter extends Interpreter
   }
 
   @Override
-  public List<String> completion(String arg0, int arg1) {
+  public List<InterpreterCompletion> completion(String arg0, int arg1) {
     //
     return null;
   }
@@ -215,11 +216,11 @@ public class Warp10Interpreter extends Interpreter
   }
 
   private String parseObjectToString(Object object) {
-    
+
     if ( object instanceof Number ) {
       return object.toString();
     } else if ( object instanceof String ) {
-      return "<'" + "\n" + object.toString() + "\n" + "'>" +"\n";
+      return "<'" + "\n" + object.toString() + "\n" + "'>" + "\n";
     } else if (object instanceof List) {
       JSONArray array = new JSONArray();
 
@@ -233,7 +234,7 @@ public class Warp10Interpreter extends Interpreter
       for (Object key : mapObj.keySet()) {
         map.put(key.toString(), mapObj.get(key));
       }
-      
+
       return "'" + map.toString() + "' JSON->";
     }
     return "";
@@ -365,7 +366,7 @@ public class Warp10Interpreter extends Interpreter
     } else {
       String errorLine = "\"Error-Line\":" + con.getHeaderField("X-Warp10-Error-Line");
       String errorMsg = "\"Error-Message\":\"" 
-                          + con.getHeaderField("X-Warp10-Error-Message") + "\"";
+          + con.getHeaderField("X-Warp10-Error-Message") + "\"";
       response.append("[{");
       response.append(errorLine + ",");
       response.append(errorMsg);
