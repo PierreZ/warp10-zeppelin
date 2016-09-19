@@ -64,7 +64,7 @@ public class Warp10Interpreter extends Interpreter
     }
 
   }
-  static final String DEFAULT_URL = "http://localhost:8080/api/v0";
+
   static final String URL_KEY = "warp10.url";
   String current_Url;
 
@@ -79,11 +79,6 @@ public class Warp10Interpreter extends Interpreter
 
   public HashMap<String, Properties> getPropertiesMap() {
     return propertiesMap;
-  }
-
-  static {
-    Interpreter.register("warpscript", Warp10Interpreter.class.getName());
-    new InterpreterPropertyBuilder().add(URL_KEY, DEFAULT_URL, "The URL for Warp10.");
   }
 
   @Override
@@ -299,11 +294,8 @@ public class Warp10Interpreter extends Interpreter
     //
 
     final String keyValue = getProperty(URL_KEY);
-    if (null != keyValue) {
-      this.current_Url = keyValue;
-    } else {
-      this.current_Url = DEFAULT_URL;
-    }
+    this.current_Url = keyValue;
+   
   }
 
   public Pair<InterpreterResult.Code, String> execRequest(String body) throws Exception {

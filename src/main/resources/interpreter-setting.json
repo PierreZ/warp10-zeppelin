@@ -1,0 +1,15 @@
+[
+  {
+    "group": "warpscript",
+    "name": "warpscript",
+    "className": "org.apache.zeppelin.warp10.Warp10Interpreter",
+    "properties": {
+      "warp10.url": {
+        "envName": null,
+        "propertyName": "warp10.url",
+        "defaultValue": "http://localhost:8080/api/v0",
+        "description": "Default url for the Warp 10 backend to call"
+      }
+    }
+  }
+]
