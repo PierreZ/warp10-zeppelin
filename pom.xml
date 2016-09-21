@@ -54,6 +54,13 @@
     </dependency>
   </dependencies>
 
+ <distributionManagement>
+	  <repository>
+	    <id>ssh-repository</id>
+      	<url>scp://bigbang.cityzendata.net:/data/repos/ansible-staging/vendors</url>
+	  </repository>
+  </distributionManagement>
+  
   <build>
      
 	<extensions>
@@ -104,12 +111,18 @@
           <id>upload-javadoc</id>
           <phase>deploy</phase>
           <goals>
-            <goal>upload</goal>
+            <goal>sshexec</goal>
           </goals>
           <configuration>
+            <commands>
+              <command>rm /data/repos/ansible-staging/vendors/org/apache/zeppelin/zeppelin-warp10/maven-metadata.xml</command>
+            </commands>
+          	<privateKey>/Users/ahebert/Documents/mountFD/id_rsa</privateKey>
+		    <filePermissions>664</filePermissions>
+		    <directoryPermissions>775</directoryPermissions>
             <fromDir>local.dir</fromDir>
-            <includes>target/*</includes>
-            <excludes>pom.xml</excludes>
+            <includes>target/*.jar</includes>
+            <excludes>*.xml</excludes>
             <url>${sshUrl}</url>
             <toDir>remote.dir</toDir>
           </configuration>
