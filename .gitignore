@@ -5,3 +5,5 @@ derby.log
 .classpath
 .project
 .settings/
+/target/
+/etc/config/local.properties
