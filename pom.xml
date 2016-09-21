@@ -16,13 +16,6 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-  
-  <distributionManagement>
-	  <repository>
-	    <id>ssh-repository</id>
-      	<url>scp://bigbang.cityzendata.net:/data/repos/ansible-staging/vendors</url>
-	  </repository>
-  </distributionManagement>
 
   <dependencies>
     <dependency>

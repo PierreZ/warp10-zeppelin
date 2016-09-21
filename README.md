@@ -74,3 +74,9 @@ To deploy this jar with scp add the follwing property file etc/config/local.prop
 ```
 sshUrl=scp://user@my.domain:/path/to
 ```
+
+Excute target deploy
+
+```
+mvn deploy -Drat.skip=true
+```
