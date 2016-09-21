@@ -10,7 +10,7 @@
   
   <groupId>org.apache.zeppelin</groupId>
   <artifactId>zeppelin-warp10</artifactId>
-  <version>0.6.1.alpha</version>
+  <version>0.6.1</version>
   <name>zeppelin-warp10</name>
   <url>http://maven.apache.org</url>
   <properties>
