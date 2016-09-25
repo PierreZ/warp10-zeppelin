@@ -61,7 +61,7 @@ Add in file conf/zeppelin-site.xml, for the property zeppelin.interpreters, this
 ```
 <property>
 <name>zeppelin.interpreters</name>
-<value>org.apache.zeppelin.spark.SparkInterpreter,...,org.apache.zeppelin.quantumviz.QuantumVizInterpreter</value>
+<value>org.apache.zeppelin.spark.SparkInterpreter,...,org.apache.zeppelin.warp10.Warp10Interpreter</value>
 </property>
 ```
 
